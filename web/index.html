@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>Tickr – Modern Watch </title>
+        <meta name="author" content="vecuro" />
+
+
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <!-- Favicons - Place favicon.ico in the root directory -->
+        <link rel="icon" type="image/png" href="assets/img/favicons/favicon.png" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <!--==============================
+              Google Fonts
+          ============================== -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+        <!--==============================
+                All CSS File
+            ============================== -->
+        <!-- Bootstrap -->
+        <!-- <link rel="stylesheet" href="assets/css/app.min.css"> -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+        <!-- Fontawesome Icon -->
+        <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
+        <!-- Magnific Popup -->
+        <link rel="stylesheet" href="assets/css/magnific-popup.min.css" />
+        <!-- Slick Slider -->
+        <link rel="stylesheet" href="assets/css/slick.min.css" />
+        <!-- Theme Custom CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" />
+
+        <style>
+            .price-slider {
+                padding: 10px 0;
+            }
+
+            .price-labels {
+                display: flex;
+                justify-content: space-between;
+                font-weight: 500;
+                margin-top: 10px;
+            }
+
+            .range-buttons button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .product-item {
+                border: 1px solid #eee;
+                border-radius: 10px;
+                overflow: hidden;
+                transition: all 0.3s ease;
+                background: #fff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+                position: relative;
+            }
+
+            .product-img img {
+                width: 100%;
+                height: auto;
+                display: block;
+
+            }
+
+            .product-actions {
+                background: rgba(255, 255, 255, 0.9);
+                opacity: 0;
+                transition: all 0.3s ease;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+
+            }
+            
+
+
+
+            .product-item:hover .product-actions {
+                opacity: 1;
+            }
+
+            .sidebar-search .search-form {
+                position: relative;
+                margin-top: 20px;
+            }
+
+            .sidebar-search input.form-control {
+                padding-right: 40px;
+            }
+        </style>
+
+    </head>
+
+    <body onload="indexOnloadFunctions();">
+
+
+        <!--==============================
+              Header Area
+            ==============================-->
+        <header class="vs-header header-layout1 header-style-1">
+
+        </header>
+
+        <!--==============================
+        Hero Area Start 
+        ==============================-->
+        <section class="hero-layout" data-bg-src="assets/img/banner/banner-bg-1.png">
+            <div class="hero-mask">
+                <div class="vs-carousel" id="hero-slider" data-slide-show="1" autoplay="false">
+                    <div class="hero-slide">
+                        <div class="container">
+                            <div class="row align-items-center justify-content-between">
+                                <div class="col-lg-6">
+                                    <div class="hero-content">
+                                        <span class="hero-subtitle">Timeless Style Awaits</span>
+                                        <h1 class="hero-title">Discover Watches That Define You</h1>
+                                        <p class="hero-text">
+                                            Find your perfect match from our curated collection of
+                                            classic, smart, and luxury watches. Whether you're
+                                            elevating your style or gifting a loved one, Tickr is
+                                            where elegance meets precision.
+                                        </p>
+
+                                        <a href="about.html" class="vs-btn style4">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="hero-img">
+                                        <img class="img1" src="assets/img/banner/banner-img-1-1.jpg" alt="hero" />
+                                        <img class="img2" src="assets/img/banner/banner-img-1-2.jpg" alt="hero" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="slide-count vs-slider-tab" data-asnavfor="#hero-slider">
+                    <button class="tab-btn active">1</button>
+                    <button class="tab-btn">2</button>
+                    <button class="tab-btn">3</button>
+                </div>
+
+                <div class="hero-bottom">
+                    <div class="container">
+                        <form class="hero-form">
+                            <div class="row">
+                                <div class="col-lg-8 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                     <i class="fas fa-search"></i>
+
+                                        <input type="text" placeholder="Find what Your Want" />
+                                    </div>
+                                </div>
+                              
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                               <a href="shop.html" class="vs-btn style4">Find Your Watch</a>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ============================
+        Hero Area End 
+        ==============================-->
+
+
+        <!--==============================
+        Tour Package Area Start 
+        ==============================-->
+        <section class="space bg-light shape-mockup-wrap" data-bg-src="assets/img/shape/Bg.png">
+            <div class="shape-mockup d-none d-xl-block jump z-index-negative" data-bottom="20%" data-left="5%">
+                <img src="assets/img/shape/Dot.png" alt="Dots" />
+            </div>
+            <div class="shape-mockup d-none d-xl-block spin z-index-negative" data-bottom="-5%" data-right="-5%">
+                <img src="assets/img/shape/circle1.png" alt="Circle" />
+            </div>
+            <div class="shape-mockup d-none d-xl-block ripple-animation z-index-negative" data-top="10%" data-left="10%">
+                <img src="assets/img/shape/Plane.png" alt="plane" />
+            </div>
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-xl-6 col-lg-8 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="title-area">
+                            <span class="sec-subtitle animate__animated animate__fadeInDown">Exclusive Watches</span>
+                            <h2 class="sec-title h1 animate__animated animate__fadeInUp">Discover Your Next Timepiece</h2>
+                            <p class="sec-text animate__animated animate__fadeIn">Explore our curated collection of luxury, smart, and classic watches. Elevate your style with Tickr – where every second counts.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="smiler-product-main"  class="row vs-carousel" data-slide-show="4" data-arrows="false" data-lg-slide-show="3"
+                     data-md-slide-show="2" data-sm-slide-show="1">
+                    <div class="col-xl-3 col-lg-6 col-sm-6" id="similer-product">
+                        <div class="package-style1">
+                            <div class="package-style1">
+                                                                        <div class="vs-product product-item" id="st-product">
+
+                                <div class="product-img">
+                                        <a href="#" id="similer-product-a1" >
+                                            <img class="w-100 animate__animated animate__zoomIn" src="assets/img/tours/tour-1-1.jpg" id="similer-product-image"
+                                                 alt="Watch Image" /></a>
+
+                                    <!--cart-->          
+<!--                                    <div class="product-hover-action">-->
+                                        <!--<ul class="cart-action">-->
+                                            <!--<li class="wishlist"><a href="#"><i class="far fa-heart"></i></a></li>-->
+                                            <!--<li class="select-option"><a href="#" id="simler-product-add-to-cart">Add to Cart</a></li>-->
+                                            <!--<li class="quickview"><a href="#" id="simlier-product-a2"><i class="far fa-eye"></i></a></li>-->
+                                        <!--</ul>-->
+                                    <!--</div>-->
+                                    <div class="product-hover-action animate__animated animate__fadeInUp">
+                                        <div class="product-actions">
+                                            <a href="#" class="icon-btn" title="Wishlist"   id="simler-product-add-to-wish"><i class="fas fa-heart"></i></a>
+                                            <a href="cart.html" class="icon-btn" title="Add to Cart"
+                                               id="simler-product-add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                            <a href="cart.html" class="icon-btn" title="Quick View"
+                                               id="simlier-product-a2"><i class="fas fa-eye"></i></a>      
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="package-content animate__animated animate__fadeInUp">
+                                    <div class="package-review">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <h3 class="package-title">
+                                        <a href="" id="similer-product-title">Elegant Watch</a>
+                                    </h3>
+                                    <p class="package-text" id="similer-product-category">Men's Collection</p>
+                                    <p class="package-text" id="similer-product-color">Color: Black</p>
+                                    <div class="package-footer">
+                                        <span class="package-price">Rs.<span id="similer-product-price">39,900</span></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="text-center pt-lg-2 animate__animated animate__fadeInUp">
+                    <a href="shop.html" class="vs-btn">Browse All Watches</a>
+                </div>
+        </section>
+        <!--==============================
+        Tour Package Area End 
+        ==============================-->
+
+        <!--==============================
+        Gallery Area Start 
+        ==============================-->
+        <section class="space space-extra-bottom gallery-style1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="title-area animate__animated animate__fadeInLeft">
+                            <span class="sec-subtitle">Tickr Gallery</span>
+                            <h2 class="sec-title h1">Featured Watch Collections</h2>
+                            <p class="sec-text">
+                                Discover our best-selling and most loved watches. From timeless classics to modern smartwatches, find the perfect piece for every occasion.
+                            </p>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-6 col-sm-6">
+                                <img class="gallery-image animate__animated animate__zoomIn" src="assets/img/gallery/gallery-1-1.jpg" alt="watch" />
+                            </div>
+                            <div class="col-xl-6 col-sm-6">
+                                <img class="gallery-image animate__animated animate__zoomIn" src="assets/img/gallery/gallery-1-2.jpg" alt="watch" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="gallery-video animate__animated animate__fadeInRight">
+                            <img src="assets/img/gallery/gwc-8-Reasons-Why-Investing-in-a-Luxury-Timepiece-Matters-legacy-Panerai-Luminor-Marina-1024x683.webp" alt="watch-gallery" />
+                            <div class="gallery-btn">
+                                <span>Watch Our Story</span>
+                                <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="play-btn popup-video"><i
+                                        class="fas fa-play"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--==============================
+        Gallery Area End 
+        ==============================-->
+
+        <!--==============================
+        Features Area Start 
+        ==============================-->
+        <section class="space-extra-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 col-sm-6 col-12">
+                        <div class="features-style1 animate__animated animate__fadeInUp">
+                            <div class="features-bg" data-bg-src="assets/img/shape/features.png"></div>
+                            <div class="features-image">
+                                <img src="assets/img/features/features-1-1.png" alt="image" />
+                            </div>
+                            <div class="features-content">
+                                <h3 class="features-title">Premium Quality</h3>
+                                <p class="features-text">
+                                    Every Tickr watch is crafted with precision and premium materials for lasting durability and style.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-sm-6 col-12">
+                        <div class="features-style1 animate__animated animate__fadeInUp" style="animation-delay:0.2s;">
+                            <div class="features-bg" data-bg-src="assets/img/shape/features.png"></div>
+                            <div class="features-image">
+                                <img src="assets/img/features/features-1-2.png" alt="image" />
+                            </div>
+                            <div class="features-content">
+                                <h3 class="features-title">Free Shipping</h3>
+                                <p class="features-text">
+                                    Enjoy free and fast delivery on all orders, right to your doorstep.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-sm-6 col-12">
+                        <div class="features-style1 animate__animated animate__fadeInUp" style="animation-delay:0.4s;">
+                            <div class="features-bg" data-bg-src="assets/img/shape/features.png"></div>
+                            <div class="features-image">
+                                <img src="assets/img/features/features-1-3.png" alt="image" />
+                            </div>
+                            <div class="features-content">
+                                <h3 class="features-title">2-Year Warranty</h3>
+                                <p class="features-text">
+                                    Shop with confidence – all Tickr watches come with a 2-year international warranty.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-sm-6 col-12">
+                        <div class="features-style1 animate__animated animate__fadeInUp" style="animation-delay:0.6s;">
+                            <div class="features-bg" data-bg-src="assets/img/shape/features.png"></div>
+                            <div class="features-image">
+                                <img src="assets/img/features/features-1-4.png" alt="image" />
+                            </div>
+                            <div class="features-content">
+                                <h3 class="features-title">24/7 Support</h3>
+                                <p class="features-text">
+                                    Our team is here to help you anytime with your orders, questions, or after-sales support.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--==============================
+        Features Area End 
+        ==============================-->
+
+
+       
+        <!--==============================
+        Footer Area
+        ==============================-->
+        <footer class="footer-style-2">
+
+        </footer>
+
+
+        <!-- Scroll To Top -->
+        <a href="#" class="scrollToTop scroll-btn"><i class="far fa-arrow-up"></i></a>
+
+        <!--==============================
+        All Js File
+        ============================== -->
+        <!-- Jquery -->
+        <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+        <!-- Slick Slider -->
+        <script src="assets/js/slick.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- Magnific Popup -->
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <!-- jquery Ui -->
+        <script src="assets/js/jquery-ui.min.js"></script>
+        <!-- Circle Progress -->
+        <script src="assets/js/circle-progress.min.js"></script>
+        <!-- isotope -->
+        <script src="assets/js/imagesLoaded.js"></script>
+        <script src="assets/js/isotope.js"></script>
+        <!-- Wow.js -->
+        <script src="assets/js/wow.min.js"></script>
+        <!-- Main Js File -->
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/t-sign-in.js"></script>
+        <script src="assets/js/index.js"></script>
+        <script src="assets/js/notification.js"></script>
+        <script src="assets/js/content-loader.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+
+
+    </body>
+
+</html>

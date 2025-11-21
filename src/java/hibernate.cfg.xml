@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/tickerdb?useSSL=false</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">2003108</property>
+        <property name="hibernate.show_sql">true</property>
+        <!-- Add your entity mappings -->
+        <mapping class="hibernate.User"/>
+        <mapping class="hibernate.Admin"/>
+        <mapping class="hibernate.City"/>
+        <mapping class="hibernate.Address"/>
+        <mapping class="hibernate.Brand"/>
+        <mapping class="hibernate.Model"/>
+        <mapping class="hibernate.Color"/>
+        <mapping class="hibernate.Status"/>
+        <mapping class="hibernate.Category"/>
+        <mapping class="hibernate.Product" />
+        <mapping class="hibernate.Cart" />
+        <mapping class="hibernate.DeliveryType" />
+        <mapping class="hibernate.Orders" />
+        <mapping class="hibernate.OrderItems" />
+        <mapping class="hibernate.OrderStatus" />
+        <mapping class="hibernate.Wishlist" />
+
+
+    </session-factory>
+</hibernate-configuration>
+
