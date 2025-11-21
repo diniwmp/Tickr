@@ -1,0 +1,98 @@
+<div class="col-lg-3">
+  <div class="sidebar-area tours-sidebar">
+    <div class="widget">
+      <h3 class="widget_title">Find Your Watch</h3>
+      <p class="widget_text">
+        Search and filter through our premium collection of wristwatches.
+      </p>
+      <form class="booking-form">
+        <div class="form-group">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search Watch Name" />
+        </div>
+
+        <div class="form-group">
+          <i class="fas fa-industry"></i>
+          <input type="text" placeholder="Brand (e.g. Omega, Rolex)" />
+        </div>
+
+        <div class="form-group">
+          <i class="fas fa-tag"></i>
+          <select class="form-select" name="category">
+            <option selected disabled hidden>Select Category</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="unisex">Unisex</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <i class="fas fa-palette"></i>
+          <input type="text" placeholder="Color (e.g. Black, Silver)" />
+        </div>
+
+        <div class="form-group">
+          <i class="fas fa-box"></i>
+          <select class="form-select" name="stock">
+            <option selected disabled hidden>Stock Availability</option>
+            <option value="in">In Stock</option>
+            <option value="out">Out of Stock</option>
+          </select>
+        </div>
+
+        <div class="price_slider_wrapper">
+          <h3 class="widget_title">Filter by Price</h3>
+
+          <div class="price-slider-bar">
+            <div class="range-input">
+              <input
+                type="range"
+                class="range-min"
+                min="100"
+                max="10000"
+                value="100"
+                step="100"
+              />
+              <input
+                type="range"
+                class="range-max"
+                min="100"
+                max="10000"
+                value="10000"
+                step="100"
+              />
+            </div>
+            <div class="price_label">
+              Price: $<span id="min-price">100</span> — $<span id="max-price"
+                >10000</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="chekbox-area">
+            <input
+              type="radio"
+              id="sort-popular"
+              name="sort"
+              value="popular"
+              checked
+            />
+            <label for="sort-popular">Popular</label>
+          </div>
+          <div class="chekbox-area">
+            <input type="radio" id="sort-trendy" name="sort" value="trendy" />
+            <label for="sort-trendy">Trendy</label>
+          </div>
+          <div class="chekbox-area">
+            <input type="radio" id="sort-latest" name="sort" value="latest" />
+            <label for="sort-latest">Latest</label>
+          </div>
+        </div>
+
+        <button class="vs-btn style4 w-100">Search Watches</button>
+      </form>
+    </div>
+  </div>
+</div>

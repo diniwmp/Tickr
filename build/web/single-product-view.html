@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>
+            Tickr | Single Product View
+        </title>
+        <meta name="author" content="vecuro" />
+        <meta name="description" content="Travolo -  Travel Agency & TickrBooking HTML Template" />
+        <meta name="keywords" content="Travolo -  Travel Agency & TickrBooking HTML Template" />
+        <meta name="robots" content="INDEX,FOLLOW" />
+
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <!-- Favicons - Place favicon.ico in the root directory -->
+        <link rel="icon" type="image/png" href="assets/img/favicons/favicon.png" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <!--==============================
+            Google Fonts
+          ============================== -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+        <!--==============================
+              All CSS File
+          ============================== -->
+        <!-- Bootstrap -->
+        <!-- <link rel="stylesheet" href="assets/css/app.min.css"> -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+        <!-- Fontawesome Icon -->
+        <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
+        <!-- jquery Ui CSS -->
+        <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
+        <!-- Magnific Popup -->
+        <link rel="stylesheet" href="assets/css/magnific-popup.min.css" />
+        <!-- Slick Slider -->
+        <!-- Slick Slider removed: not needed for Bootstrap carousel -->
+        <!-- Theme Custom CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" />
+
+        <link rel="stylesheet" href="assets/css/notification.css"/>
+        <link rel="stylesheet" href="assets/css/style.min.css"/>
+
+        <style>
+
+            .product-img img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            .product-actions {
+                background: rgba(255, 255, 255, 0.9);
+                opacity: 0;
+                transition: all 0.3s ease;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .product-item:hover .product-actions {
+                opacity: 1;
+            }
+
+            /* Fix Slick carousel stacking issue */
+            .carousel-info.slick-slider {
+                display: block;
+                min-width: 0;
+                overflow: hidden;
+            }
+
+            .carousel-info .slick-slide {
+                display: flex !important;
+                justify-content: center;
+                align-items: center;
+                height: auto !important;
+            }
+
+            .carousel-info .slick-slide img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+
+            .carousel-info .slick-list {
+                padding: 0 !important;
+            }
+
+
+            /*            .product-actions {
+                            background: rgba(255, 255, 255, 0.9);
+                            opacity: 0;
+                            transition: all 0.3s ease;
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            padding: 10px;
+                            display: flex;
+                            justify-content: center;
+                            gap: 10px;
+                        }*/
+
+
+            /* Improved Bootstrap carousel controls */
+            #productCarousel .carousel-control-prev,
+            #productCarousel .carousel-control-next {
+                width: 3rem;
+                height: 3rem;
+                top: 50%;
+                transform: translateY(-50%);
+                background: none !important;
+                border: none !important;
+                opacity: 1;
+                z-index: 2;
+            }
+
+            #productCarousel .carousel-control-prev-icon,
+            #productCarousel .carousel-control-next-icon {
+                background-image: none !important;
+                color: #222 !important;
+                font-size: 2.5rem;
+                width: 2.5rem;
+                height: 2.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
+
+            #productCarousel .carousel-control-prev-icon:after {
+                content: "\2039";
+                /* Unicode left arrow */
+                color: #222;
+                font-size: 2.5rem;
+                font-weight: bold;
+                display: block;
+            }
+
+            #productCarousel .carousel-control-next-icon:after {
+                content: "\203A";
+                /* Unicode right arrow */
+                color: #222;
+                font-size: 2.5rem;
+                font-weight: bold;
+                display: block;
+            }
+
+            #productCarousel .carousel-control-prev:focus,
+            #productCarousel .carousel-control-next:focus {
+                outline: none;
+                box-shadow: none;
+            }
+
+            /* Custom Bootstrap carousel controls */
+            #productCarousel .carousel-control-prev-icon,
+            #productCarousel .carousel-control-next-icon {
+                background-image: none;
+                color: #222;
+                font-size: 2rem;
+                width: 2.5rem;
+                height: 2.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: transparent;
+                border: none;
+            }
+
+            #productCarousel .carousel-control-prev-icon:after {
+                content: "\2039";
+                /* Unicode left arrow */
+                color: #222;
+                font-size: 2.5rem;
+                font-weight: bold;
+            }
+
+            #productCarousel .carousel-control-next-icon:after {
+                content: "\203A";
+                /* Unicode right arrow */
+                color: #222;
+                font-size: 2.5rem;
+                font-weight: bold;
+            }
+
+
+
+        </style>
+    </head>
+
+    <body onload="loadsData();">
+
+  <header class="vs-header header-layout1 header-style-1">
+
+  </header>
+
+
+        <div class="breadcumb-wrapper" style="background: url('assets/img/breadcumb/breadcumb-bg.jpg') center center/cover no-repeat; min-height: 220px;">
+            <div class="container z-index-common">
+                <div class="breadcumb-content py-4">
+                    <h1 class="breadcumb-title text-dark">Tickr Single Product</h1>
+                    <div class="breadcumb-menu-wrap">
+                        <ul class="breadcumb-menu">
+                            <li class="text-dark">
+                                <a class="text-dark" href="index.html">Home</a>
+                            </li>
+                            <li class="text-dark">Single-product view</li>
+                            <!-- <li class="text-dark">Product name here</li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--==============================
+            Hero Area End
+          ==============================-->
+
+        <!--==============================
+            Tours Booking Area Start
+          ==============================-->
+
+        <section class="space-bottom">
+            <div class="outer-wrap">
+                <div class="filter-menu1 filter-menu-active wow fadeInUp wow-animated">
+                    <hr />
+                    <hr />
+                </div>
+                <div class="container">
+                    <div class="shadow-content1">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="filter-active tour-booking-active">
+                                    <div class="filter-item tab-content1">
+                                        <div class="info-image mb-4">
+                                            <div class="row align-items-center g-4">
+                                                <div class="col-lg-12">
+                                                    <div id="productCarousel" class="carousel slide shadow rounded allign-item-center" data-bs-ride="carousel">
+                                                        <div class="carousel-inner rounded">
+                                                            <div class="carousel-item active">
+                                                                <img id="image1" src="assets/img/breadcumb/breadcumb-bg.jpg"
+                                                                     class="d-block w-100 img-fluid rounded" alt="Watch Image 1" />
+                                                            </div>
+                                                            <div class="carousel-item">
+                                                                <img id="image2" src="assets/img/gallery/gallery-3-1.jpg"
+                                                                     class="d-block w-100 img-fluid rounded" alt="Watch Image 2" />
+                                                            </div>
+                                                            <div class="carousel-item">
+                                                                <img id="image3" src="assets/img/gallery/gallery-3-2.jpg"
+                                                                     class="d-block w-100 img-fluid rounded" alt="Watch Image 3" />
+                                                            </div>
+                                                        </div>
+                                                        </br></br>
+
+                                                        <button class="carousel-control-prev" type="button"
+                                                                data-bs-target="#productCarousel" data-bs-slide="prev">
+                                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                            <span class="visually-hidden">Previous</span>
+                                                        </button>
+                                                        <button class="carousel-control-next" type="button"
+                                                                data-bs-target="#productCarousel" data-bs-slide="next">
+                                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                            <span class="visually-hidden">Next</span>
+                                                        </button>
+                                                        <ol class="carousel-indicators mb-0">
+                                                            <li data-bs-target="#productCarousel" data-bs-slide-to="0" class="active"></li>
+                                                            <li data-bs-target="#productCarousel" data-bs-slide-to="1"></li>
+                                                            <li data-bs-target="#productCarousel" data-bs-slide-to="2"></li>
+                                                        </ol>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row justify-content-between align-items-center">
+
+                                            <h2 class="product-title" id="product-title" >Omega Seamaster Aqua Terra</h2>
+
+                                            <p class="mb--10">Published On <span id="published-on">September 2, 2024</span></p>
+
+                                            <p> <span class="price-amount">Rs. <span id="product-price">350,000.00</span></span></p>
+
+                                            <ul class="product-meta">
+                                                <li>Brand:&nbsp;<span id="brand-name">Brand Name Here</span></li>
+                                                <li>Model:&nbsp;<span id="model-name">Model Name Here</span></li>
+                                                <li><span id="category">Product category Here</span></li>
+                                                <li>In stock&nbsp;<span id="product-stock">5</span>&nbsp;Watches</li>
+                                                <li>Color:&nbsp;<span id="color">Color Name Here</span></li>
+
+                                            </ul>
+
+                                            <!--<p class="mb--10">Color: <span id="color"> Here</span></p>-->
+
+                                            <h5 class="mt-4">Description:</h5>
+                                            <p id="description">
+                                                The Omega Seamaster Aqua Terra 150M is a premium
+                                                wristwatch designed for the modern man who values
+                                                precision.
+                                            </p>
+
+
+
+                                            <div class="product-action col-12">
+                                                <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap mt-3">
+                                                    <!-- Cart Button -->
+                                                    <a href="#" class="icon-btn" title="Add to Cart" id="add-to-cart-main">
+                                                        <i class="fas fa-shopping-cart"></i>
+                                                    </a>
+
+                                                    <!-- Quantity Input -->
+                                                    <div class="pro-qty">
+                                                        <input type="text" value="1" id="add-to-cart-qty"  style="width: 100px;"/>
+                                                    </div>
+
+                                                    <!-- Wishlist Button -->
+                                                    <a href="#" class="icon-btn" title="Wishlist" id="add-to-wishlist-main">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="filter-item tab-content4">
+                                            <h2 class="tab-title">Watch Gallery</h2>
+                                            <p class="tab-text">
+                                                Discover more angles and close-ups of the Watch.
+                                            </p>
+                                            <div class="gx-gy gallery-mesonary col-10">
+                                                <div class="grid-item">
+                                                    <div class="gallery-img5">
+                                                        <img id="thumb-image1" src="assets/img/gallery/gallery-3-1.jpg" alt="images" />
+                                                        <div class="gallery-content">
+                                                            <a href="assets/img/gallery/gallery-3-1.jpg"
+                                                               class="popup-image"><i class="fas fa-plus"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-item">
+                                                    <div class="gallery-img5">
+                                                        <img id="thumb-image2" src="assets/img/gallery/gallery-3-2.jpg" alt="images" />
+                                                        <div class="gallery-content">
+                                                            <a href="assets/img/gallery/gallery-3-2.jpg"
+                                                               class="gallery-img"><i class="fas fa-plus"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-item">
+                                                    <div class="gallery-img5">
+                                                        <img  id="thumb-image3" src="assets/img/gallery/gallery-3-5.jpg" alt="images" />
+                                                        <div class="gallery-content">
+                                                            <a href="assets/img/gallery/gallery-3-5.jpg"
+                                                               class="gallery-img"><i class="fas fa-plus"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!--==============================
+        Simmiler Watchers Start 
+          ==============================-->
+        <section class="space bg-light shape-mockup-wrap" data-bg-src="assets/img/shape/Bg.png">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-xl-6 col-lg-8 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="title-area">
+                            <span class="sec-subtitle">Find out the </span>
+                            <h2 class="sec-title h1">Similar Products</h2>
+                        </div>
+                    </div>
+                </div>
+                <div id="smiler-product-main" class="row vs-carousel" data-slide-show="4" data-arrows="false" data-lg-slide-show="3"
+                     data-md-slide-show="2" data-sm-slide-show="1">
+                    <div class="col-xl-3 col-lg-6 col-sm-6" id="similer-product">
+                        <div class="package-style1">
+                            <div class="vs-product product-item" id="st-product">
+
+                                <div class="product-img">
+                                    <a href="#" id="similer-product-a1" >
+                                        <img class="w-100" src="assets/img/tours/tour-1-1.jpg" id="similer-product-image"
+                                             alt="Package Image" /></a>
+
+                                    <!--cart-->          
+                                    <div class="product-hover-action">
+                                        <ul class="cart-action">
+                                            <!--<li class="wishlist"><a href="#"><i class="far fa-heart"></i></a></li>-->
+                                            <!--<li class="select-option"><a href="#" id="simler-product-add-to-cart">Add to Cart</a></li>-->
+                                            <!--<li class="quickview"><a href="#" id="simlier-product-a2"><i class="far fa-eye"></i></a></li>-->
+                                        </ul>
+                                    </div>
+
+                                    <div class="product-actions">
+                                        <a href="#" class="icon-btn" title="Wishlist" id="simler-product-add-to-wish"><i class="fas fa-heart"></i></a>
+                                        <a href="cart.html" class="icon-btn" title="Add to Cart"
+                                           id="simler-product-add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                        <a href="cart.html" class="icon-btn" title="Add to Cart"
+                                           id="simlier-product-a2"><i class="fas fa-eye"></i></a>      
+
+                                    </div>
+                                </div>
+
+                                <h5 class="product-title">
+                                    <a href="#" id="similer-product-title">Bloddy Wach</a>
+                                </h5>
+                                <p class="package-text" id="similer-product-category">mens</p>
+
+                                <p class="package-text" id="similer-product-color"> Color</p>
+
+                                <div class="package-footer">
+                                   <span class="product-price" id="similer-product-price">$399</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-sm-6">
+                        <div class="package-style1">
+                            <div class="package-img">
+                                <a href="tour-booking.html"><img class="w-100" src="assets/img/tours/tour-1-1.jpg"
+                                                                 alt="Package Image" /></a>
+                            </div>
+                            <div class="package-content">
+                                <h3 class="package-title">
+                                    <a href="tour-booking.html">Bloddy Wach</a>
+                                </h3>
+                                <p class="package-text">mens</p>
+                                <div class="package-footer">
+                                    <span class="package-price">$399</span>
+                                    <a href="tour-booking.html" class="vs-btn style4">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center pt-lg-2">
+                    <a href="shop.html" class="vs-btn">View More</a>
+                </div>
+            </div>
+        </section>
+
+
+        <!--==============================
+            Footer Area
+          ==============================-->
+        <footer class="footer-style-2">
+
+        </footer>
+
+        <!--********************************
+            Code Ends Here 
+          ******************************** -->
+
+        <!-- Scroll To Top -->
+        <a href="#" class="scrollToTop scroll-btn"><i class="far fa-arrow-up"></i></a>
+
+        <!--==============================
+            All Js File
+        ============================== -->
+        <!-- Jquery -->
+        <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+        <!-- Slick Slider -->
+        <!-- Slick Slider removed: not needed for Bootstrap carousel -->
+        <!-- Bootstrap 5 Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Magnific Popup -->
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <!-- jquery Ui -->
+        <script src="assets/js/jquery-ui.min.js"></script>
+        <!-- Circle Progress -->
+        <script src="assets/js/circle-progress.min.js"></script>
+        <!-- isotope -->
+        <script src="assets/js/imagesLoaded.js"></script>
+        <script src="assets/js/isotope.js"></script>
+        <!-- Wow.js -->
+        <script src="assets/js/wow.min.js"></script>
+        <!-- Main Js File -->
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/singleProductView.js"></script>
+        <!--<script src="assets/js/notification.js"></script>-->
+        <script src="assets/js/cart.js"></script>
+        <script src="assets/js/checkout.js"></script>
+        <script src="assets/js/content-loader.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="assets/js/notification.js"></script>
+
+
+        <!-- <script src="assets/js/similarProducts.js"></script> -->
+
+    </body>
+
+</html>

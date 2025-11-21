@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Tickr - Cart</title>
+
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Favicons - Place favicon.ico in the root directory -->
+        <link rel="icon" type="image/png" href="assets/img/favicons/favicon.png">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="theme-color" content="#ffffff">
+
+        <!--==============================
+                Google Fonts
+              ============================== -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+        <!--==============================
+                  All CSS File
+              ============================== -->
+        <!-- Bootstrap -->
+        <!-- <link rel="stylesheet" href="assets/css/app.min.css"> -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+        <!-- Fontawesome Icon -->
+        <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
+        <!-- Magnific Popup -->
+        <link rel="stylesheet" href="assets/css/magnific-popup.min.css" />
+        <!-- Slick Slider -->
+        <link rel="stylesheet" href="assets/css/slick.min.css" />
+        <!-- Theme Custom CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" />
+    </head>
+
+    <body  onload="loadCartItems();">
+        <!--********************************
+        Code Start From Here 
+              ******************************** -->
+
+        <header class="vs-header header-layout1 header-style-1">
+
+        </header>
+        <!--==============================
+          Header Area End
+        ==============================-->
+
+        <!--==============================
+                Hero area Start
+              ==============================-->
+        <div class="breadcumb-wrapper" style="background: url('assets/img/breadcumb/breadcumb-bg.jpg') center center/cover no-repeat; min-height: 220px;">
+            <div class="container z-index-common">
+                <div class="breadcumb-content">
+                    <h1 class="breadcumb-title text-dark">Cart</h1>
+                    <div class="breadcumb-menu-wrap">
+                        <ul class="breadcumb-menu">
+                            <li class="text-dark"><a href="index.html" class="text-dark">Home</a></li>
+
+                            <li class="text-dark">Cart</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--==============================
+                Hero Area End
+              ==============================-->
+
+        <!--==============================
+                Cart Area Start
+              ==============================-->
+        <div class="space vs-cart-wrapper">
+            <div class="container">
+
+                <form action="#" class="woocommerce-cart-form">
+                    <div class="table-responsive">
+                        <table class="cart_table">
+                            <thead>
+                                <tr>
+                                    <th class="cart-col-image">Image</th>
+                                    <th class="cart-col-productname">Product Name</th>
+                                    <th class="cart-col-price">Price</th>
+                                    <th class="cart-col-quantity">Quantity</th>
+                                    <th class="cart-col-total">Total</th>
+                                    <th class="cart-col-remove">Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cart-item-container">
+
+                                <tr class="cart_item" id="cart-item-row" style="display: none;">
+                                    <td data-title="Product">
+                                        <a class="cart-productimage" href="#" id="product-a1"><img width="80" height="80" src="" alt="Image" id="product-image" /></a>
+                                    </td>
+                                    <td data-title="Name">
+                                        <a class="cart-productname" href="#" id="product-title"></a>
+                                    </td>
+                                    <td data-title="Price">
+                                        <span class="amount">Rs.<span id="product-price"></span></span>
+                                    </td>
+                                    <td data-title="Quantity">
+                                        <div class="quantity">
+                                            <input type="number" class="qty-input" value="1" id="product-qty"/>
+                                        </div>
+                                    </td>
+                                    <td data-title="Total">
+                                        <span class="amount">Rs.<span id="product-total"></span></span>
+                                    </td>
+                                    <td data-title="Remove">
+                                        <a href="#" class="remove" id="remove"><i class="fal fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+
+
+                                <!--                               
+                                                                <tr>
+                                                                    <td colspan="6" class="actions">
+                                                                        <div class="vs-cart-coupon">
+                                                                            <input type="text" class="form-control" placeholder="Coupon Code..." />
+                                                                            <button type="submit" class="vs-btn style4">
+                                                                                Apply Coupon
+                                                                            </button>
+                                                                        </div>
+                                                                        <button type="submit" class="vs-btn style4">
+                                                                            Update cart
+                                                                        </button>
+                                                                        <a href="shop.html" class="vs-btn style4">Continue Shopping</a>
+                                                                    </td>
+                                                                </tr>-->
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+                <div class="row justify-content-end">
+                    <div class="col-md-8 col-lg-7 col-xl-6">
+                        <h2 class="h4 summary-title">Cart Totals</h2>
+                        <table class="cart_totals">
+                            <tbody>
+                                <tr>
+                                    <td>Cart Subtotal</td>
+                                    <td data-title="Cart Subtotal">
+                                        <span class="amount" id="order-total-quantity">0</span>
+                                    </td>
+                                </tr>
+                                <tr class="shipping">
+                                    <th>Shipping and Handling</th>
+                                    <td data-title="Shipping and Handling">
+
+                                        <p class="woocommerce-shipping-destination">
+                                            Shipping options can  updated during checkout.
+                                        </p>
+
+                            </tbody>
+                            <tfoot>
+                                <tr class="order-total">
+                                    <td>Order Total</td>
+                                    <td data-title="Total">
+                                        <strong><span class="amount" id="order-total-amount">Rs.<span></span>0</span></strong>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <a href="checkout.html" class="vs-btn w-100 style4">Proceed to checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--==============================
+                Cart Area End
+              ==============================-->
+
+        <!--==============================
+                Footer Area
+              ==============================-->
+        <footer class="footer-style-2">
+
+        </footer>
+
+        <!--********************************
+          Code Ends Here 
+              ******************************** -->
+
+        <!-- Scroll To Top -->
+        <a href="#" class="scrollToTop scroll-btn"><i class="far fa-arrow-up"></i></a>
+
+        <!--==============================
+          All Js File
+      ============================== -->
+
+        <script src="assets/js/cart.js"></script>
+        <!-- Jquery -->
+        <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+        <!-- Slick Slider -->
+        <script src="assets/js/slick.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- Magnific Popup -->
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <!-- jquery Ui -->
+        <script src="assets/js/jquery-ui.min.js"></script>
+        <!-- Circle Progress -->
+        <script src="assets/js/circle-progress.min.js"></script>
+        <!-- isotope -->
+        <script src="assets/js/imagesLoaded.js"></script>
+        <script src="assets/js/isotope.js"></script>
+        <!-- Wow.js -->
+        <script src="assets/js/wow.min.js"></script>
+        <!-- Main Js File -->
+        <script src="assets/js/main.js"></script>
+
+        <script src="assets/js/notification.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="assets/js/content-loader.js"></script>
+
+
+    </body>
+
+</html>
