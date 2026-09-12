@@ -15,8 +15,8 @@ public class Mail {
     
     
 
-    private static final String APP_EMAIL = "dinithiwm@gmail.com"; // From - Senders address
-    private static final String APP_PASSWORD = "tgbu yibn aobc lsvf"; // Your App Password
+    private static final String APP_EMAIL = ""; // From - Senders address
+    private static final String APP_PASSWORD = ""; // Your App Password
 
     public static void sendMail(String email, String subject, String htmlContent) {
 
